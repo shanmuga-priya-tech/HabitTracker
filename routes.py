@@ -59,7 +59,6 @@ def add_habits():
                            )
 
 
-
 @pages.route("/complete", methods=["POST"])
 def complete():
     date_string = request.form.get("date")#data we get from hidden fields
@@ -68,3 +67,10 @@ def complete():
     current_app.db.completions.insert_one({"date": date, "habit": habit})
 
     return redirect(url_for("habits.home", date=date_string))
+
+
+@pages.route("/delete/<habit_id>",methods=["POST"])
+def delete(habit_id):
+    current_app.db.habits.delete_one({"_id": habit_id})
+    current_app.db.completions.delete_many({"habit": habit_id})
+    return redirect(url_for("habits.home"))
