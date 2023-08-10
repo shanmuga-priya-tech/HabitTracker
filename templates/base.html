@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit-Tracker</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="\static\css\style.css">
+</head>
+<body>
+    
+    <header class="header">
+        <h1 class="title" ><a href="{{url_for('habits.home')}}" class="header-link">Habit-Tracker</a></h1>
+        {% if "add" not in request.endpoint %} 
+            <a href="{{url_for('habits.add_habits')}}" class="header-link">+Add new</a>
+        {% endif %}
+    </header>
+
+    <main class="main">
+        <section class="dates">
+            {% for date in date_range(selected_date) %}
+            <!--as the selected dte always going to be center we r targeting it to give extra style-->
+                <a class="date_link {{'date_link--current' if loop.index0 == 3 else ''}}"
+                href="{{url_for('habits.home',date=date) }}"> <!--here the selected date is passed is along with
+                     endpoint which is utilised in home functn to define selected date --> 
+                <time class="date" datetime="{{date}}">
+                    <span>{{ date.strftime("%a") }}</span><!--days-->
+                    <span>{{ date.strftime("%d") }}</span><!--date-->
+                </time>
+                </a>
+            {% endfor %}
+        </section>
+        {%block content %}
+        
+        {% endblock %}
+    </main>
+</body>
+</html>

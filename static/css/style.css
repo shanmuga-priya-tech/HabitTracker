@@ -1,0 +1,128 @@
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+body{
+    box-sizing: border-box;
+    
+}
+.header,.main{
+    max-width: 600px;
+    margin:0px auto;
+    padding:15px
+}
+.header{
+    display: flex;
+    background-color: black;
+    color: white;
+    border-radius: 6px 6px 0px 0px;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-link{
+     text-decoration: none;/* it removes underline */
+    color: inherit;
+    cursor: pointer;
+}
+.header-link:hover{
+    color: rgb(255, 227, 191);
+    
+}
+.title{
+    margin: 0;
+}
+.main{
+    background-color: rgb(255, 247, 247);
+}
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.input-field{
+    font-size: 20px;
+    padding:10px 10px;
+    background-color: rgb(255, 227, 193);
+    resize: none;
+    color: black;
+    border: 3px solid  whitesmoke;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+.btn{
+    display: flex;
+    align-self: flex-end;
+    background-color: rgb(255, 223, 180);
+    font-size: 18px;
+    padding:8px;
+    border-radius: 6px ;
+    border: none;
+    cursor: pointer;
+}
+.dates{
+    display:flex;
+    justify-content: space-around;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.date_link{
+    text-decoration: none;
+    color: inherit;
+    outline:none;
+    padding:10px 20px;
+    border-radius: 6px;
+    background-color: rgba(255, 237, 215, 0.8);
+}
+.date_link--current{
+    background-color: rgb(255, 216, 164);
+}
+.date{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.habit {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 26px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #fff2d8;
+      border: 3px solid black;
+      border-radius: 6px;
+    }
+    
+.habit:not(.completed) {
+      padding: 0;
+    }
+    
+.habit:not(.completed):hover {
+      background-color: #e9cd87;
+    }
+.habit__icon {
+    width: 1em;
+    height: 1em;
+    }
+.habit__name {
+      margin: 0;
+    }
+.habit__form {
+    width: 100%;
+}
+.habit__button {
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 20px;
+      font-family: inherit;
+      font-size: inherit;
+      text-align: left;
+      border: none;
+      background-color: unset;
+     cursor: pointer;
+}
+
