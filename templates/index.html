@@ -15,13 +15,24 @@
                 </div>
             {% else %}
                 <div class="habit">
+                    <p class="habit__name">
+                        {{ habit["name"] }}
+                    </p>
+                    <div class="button">
                     <form method="POST" class="habit__form" action="{{ url_for('habits.complete') }}">
                     <input type="hidden" id="habitId" name="habitId" value="{{ habit['_id'] }}" />
                     <input type="hidden" id="date" name="date" value="{{ selected_date }}" />
                    <button type="submit" class="habit__button"><!--only this btn will display to user-->
-                            {{ habit["name"] }}
+                            Complete
                     </button>
                     </form>
+                    <form method="POST" class="habit__form" action="{{ url_for('habits.delete', habit_id=habit['_id']) }}">
+                        <input type="hidden" id="habitId" name="habitId" value="{{ habit['_id'] }}" />
+                       <button type="submit" class="habit__button"  onclick="return confirm('Are you sure you want to delete this habit?')"><!--only this btn will display to user-->
+                               Delete
+                        </button>
+                    </form>
+                    </div>
                 </div>
             {% endif %} 
     {% endfor %}
