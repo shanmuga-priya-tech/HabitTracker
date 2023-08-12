@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{%block content%}
+<div class="form_table">
+    
+            <form action="/login" method="POST" class="form">
+                {% for message in get_flashed_messages() %}
+                    <div class="alert">
+                        <p>{{ message }}</p>
+                    </div>
+                {% endfor %}
+                <h1 class="title">Login</h1>
+                <label class="form_title" for="email" >Email id:</label><br>
+                <input class="form_input" type="email" name="email" id="email" placeholder="Enter Email Address" required/><br>
+
+                <label class="form_title" for="password" >Password:</label><br>
+                <input class="form_input" type="password" name="password" id="password" placeholder="Enter password" required/><br>
+
+                <button class="submit_btn" type="submit" value="login">Login</button>
+            </form>
+</div>
+    {%endblock%}

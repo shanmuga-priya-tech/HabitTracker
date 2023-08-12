@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{%block content%}
+<div class="form_table">
+    
+            <form action="/" method="POST" class="form">
+                <h1 class="title">Register</h1>
+                <label class="form_title" for="email" >Email id:</label><br>
+                <input class="form_input" type="email" name="email" id="email" placeholder="Enter Email Address" required/><br>
+
+                <label class="form_title" for="password" >Password:</label><br>
+                <input class="form_input" type="password" name="password" id="password" placeholder="Enter password" required/><br>
+
+                <button class="submit_btn" type="submit" value="sign_up">Sign Up</button>
+                <p>Already registered click here to <a href="{{url_for('habits.log')}}" class="link">Login</a></p>
+            </form>
+        
+</div>
+    {%endblock%}
