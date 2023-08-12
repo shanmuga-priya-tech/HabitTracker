@@ -78,6 +78,28 @@ body{
 .date_link--current{
     background-color: rgb(255, 216, 164);
 }
+.date_link:first-of-type,
+.date_link:nth-of-type(2),
+.date_link:last-of-type,
+.date_link:nth-last-of-type(2) {
+  display: none;
+}
+
+/* Comes into effect when the screen is 400px wide. Reveals the second and second-to-last date link*/
+@media screen and (min-width: 25rem) {
+  .date_link:nth-of-type(2),
+  .date_link:nth-last-of-type(2) {
+    display: block;
+  }
+}
+
+/* Comes into effect when the screen is 560px wide. Reveals the first and last date link */
+@media screen and (min-width: 35rem) {
+  .date_link:first-of-type,
+  .date_link:last-of-type {
+    display: block;
+  }
+}
 .date{
     display: flex;
     flex-direction: column;
