@@ -18,6 +18,7 @@
         {% if "add" not in request.endpoint %} 
             <a href="{{url_for('habits.add_habits')}}" class="header-link">+Add new</a>
         {% endif %}
+        <a href="{{url_for('habits.logout')}}" class="header-link">Logout</a>
     </header>
 
     <main class="main">
