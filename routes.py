@@ -1,12 +1,12 @@
 import uuid
-from flask import Blueprint,session,current_app,flash,render_template,request,url_for,redirect#importing bluerint instead of flask
+from flask import Blueprint,session,current_app,flash,render_template,request,url_for,redirect#importing blueprint instead of flask
 import datetime
 from passlib.hash import pbkdf2_sha256
 
 
 
 #replace all app to pages and everywhere in url use habits. both in html and routesfile
-pages=Blueprint("habits",__name__,static_folder="static",template_folder="templates")#instead of ap=flask ,pages=blueprint
+pages=Blueprint("habits",__name__,static_folder="static",template_folder="templates")#instead of app=flask ,pages=blueprint
 
 
     
